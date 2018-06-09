@@ -1,9 +1,10 @@
+image: openjdk:8u171-jdk-stretch
+
 variables:
   TERM: dumb
 
 ci:
   stage: build
-  image: openjdk:8u171-jdk-stretch
 
   before_script:
   - pwd
@@ -14,7 +15,7 @@ ci:
   - which apt-get
   - which apt || true
   - apt-get update -yqq >/dev/null || true
-  - apt-get install -yqq --no-install-recommends bash >/dev/hull
+  - apt-get install -yqq --no-install-recommends bash wget unzip >/dev/hull
 
   script:
   - ./gradlew -S >/dev/null
@@ -28,8 +29,11 @@ ci:
 
 pages:
   stage: deploy
-  image: openjdk:8u151-jdk-alpine3.7
   script:
+  - wget https://services.gradle.org/distributions/gradle-4.8-bin.zip -O /tmp/gradle-4.8-bin.zip
+  - unzip -d /tmp /tmp/gradle-4.8-bin.zip
+  - export PATH="/tmp/gradle-4.8/bin:$PATH"
+  - gradle :docs:documentation
   - ./gradlew :docs:tasks --all
   - ./gradlew :docs:documentation
   artifacts:
