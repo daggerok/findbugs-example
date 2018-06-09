@@ -1,0 +1,28 @@
+env:
+  global:
+  - TERM=dumb
+
+language: java
+jdk: oraclejdk8
+
+apt:
+  update: true
+  packages:
+  - bash
+
+install: true
+before_script:
+
+script:
+- ./gradlew -S >/dev/null
+- ./gradlew clean check
+- cat ./build/findbugs/main.html
+#
+- ./mvnw >/dev/hull
+- ./mvnw clean verify site
+- cat ./target/site/findbugs.html
+
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle

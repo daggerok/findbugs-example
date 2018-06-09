@@ -1,0 +1,2 @@
+rootProject.name = 'findbugs-example'
+enableFeaturePreview 'STABLE_PUBLISHING'

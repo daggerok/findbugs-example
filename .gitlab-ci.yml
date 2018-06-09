@@ -1,0 +1,29 @@
+image: openjdk:8u171-jdk-stretch
+
+variables:
+  TERM: dumb
+
+ci-job:
+  before_script:
+  - pwd
+  - whoami
+  - ls -lah .
+  - uname -a
+  - which bash
+  - which apt-get
+  - which apt || true
+  - apt-get update -yqq >/dev/null || true
+  - apt-get install -yqq --no-install-recommends bash >/dev/hull
+  script:
+  - ./gradlew -S >/dev/null
+  - ./gradlew clean check
+  - cat ./build/findbugs/main.html
+  #
+  - ./mvnw >/dev/hull
+  - ./mvnw clean verify site
+  - cat ./target/site/findbugs.html
+
+cache:
+  paths:
+  - ${HOME}/.m2
+  - ${HOME}/.gradle
