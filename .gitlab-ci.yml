@@ -19,8 +19,6 @@ ci:
   script:
   - ./gradlew -S >/dev/null
   #
-  - ./gradlew -S documentation
-  #
   - ./gradlew clean check
   - cat ./build/findbugs/main.html | wc -l
   #
