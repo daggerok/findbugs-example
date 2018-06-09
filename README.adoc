@@ -6,6 +6,8 @@
 ----
 # ./mvnw clean verify site
 ./mvnw
+# output:
+#      [java] Warnings generated: 15
 open ./target/site/findbugs.html
 ----
 
