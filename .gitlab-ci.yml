@@ -25,6 +25,16 @@ ci-job:
   - ./mvnw clean verify site
   - cat ./target/site/findbugs.html | wc -l
 
+pages:
+  image: alpine:latest
+  script:
+  - ./gradlew docs >/dev/null || true
+  - mkdir -p ./public
+  - cp ./*.html ./public/
+  artifacts:
+    paths:
+    - public
+
 cache:
   paths:
   - ${HOME}/.m2
