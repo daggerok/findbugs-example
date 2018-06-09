@@ -16,11 +16,11 @@ before_script:
 script:
 - ./gradlew -S >/dev/null
 - ./gradlew clean check
-- cat ./build/findbugs/main.html
+- cat ./build/findbugs/main.html | wc -l
 #
 - ./mvnw >/dev/null
 - ./mvnw clean verify site
-- cat ./target/site/findbugs.html
+- cat ./target/site/findbugs.html | wc -l
 
 cache:
   directories:
