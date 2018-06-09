@@ -1,4 +1,4 @@
-= findbugs-gradle-example image:https://travis-ci.org/daggerok/findbugs-example.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/findbugs-example"] mage:https://gitlab.com/daggerok/findbugs-example/badges/master/build.svg["Build Status", link="https://gitlab.com/daggerok/findbugs-example/-/jobs"] image:https://gitlab.com/daggerok/findbugs-example/badges/master/coverage.svg["Coverage Status", link="https://gitlab.com/daggerok/findbugs-example/-/jobs"]
+= findbugs-gradle-example image:https://travis-ci.org/daggerok/findbugs-example.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/findbugs-example"] image:https://gitlab.com/daggerok/findbugs-example/badges/master/build.svg["Build Status", link="https://gitlab.com/daggerok/findbugs-example/-/jobs"] image:https://gitlab.com/daggerok/findbugs-example/badges/master/coverage.svg["Coverage Status", link="https://gitlab.com/daggerok/findbugs-example/-/jobs"]
 
 //tag::content[]
 .maven
