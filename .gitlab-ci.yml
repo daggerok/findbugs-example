@@ -1,9 +1,9 @@
-image: openjdk:8u171-jdk-stretch
-
 variables:
   TERM: dumb
 
-ci-job:
+ci:
+  stage: build
+  image: openjdk:8u171-jdk-stretch
 
   before_script:
   - pwd
@@ -27,12 +27,18 @@ ci-job:
   - ./mvnw >/dev/null
   - ./mvnw clean verify site
   - cat ./target/site/findbugs.html | wc -l
-  #
-  - ./gradlew docs >/dev/null || true
 
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+  - ./gradlew :docs:tasks --all
+  - ./gradlew :docs:documentation
   artifacts:
     paths:
     - public
+  only:
+  - master
 
 cache:
   paths:
