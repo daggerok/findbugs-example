@@ -4,6 +4,7 @@ variables:
   TERM: dumb
 
 ci-job:
+
   before_script:
   - pwd
   - whoami
@@ -14,14 +15,15 @@ ci-job:
   - which apt || true
   - apt-get update -yqq >/dev/null || true
   - apt-get install -yqq --no-install-recommends bash >/dev/hull
+
   script:
   - ./gradlew -S >/dev/null
   - ./gradlew clean check
-  - cat ./build/findbugs/main.html
+  - cat ./build/findbugs/main.html | wc -l
   #
   - ./mvnw >/dev/null
   - ./mvnw clean verify site
-  - cat ./target/site/findbugs.html
+  - cat ./target/site/findbugs.html | wc -l
 
 cache:
   paths:
