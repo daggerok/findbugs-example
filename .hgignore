@@ -1,5 +1,6 @@
 syntax: glob
 ^.gradle/*
+^/public/
 .gradle
 ^.git/*
 .git
