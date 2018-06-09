@@ -30,7 +30,7 @@ ci:
 
 pages:
   stage: deploy
-  image: alpine:latest
+  image: openjdk:8u151-jdk-alpine3.7
   script:
   - ./gradlew :docs:tasks --all
   - ./gradlew :docs:documentation
