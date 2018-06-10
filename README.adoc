@@ -42,6 +42,11 @@ open ./build/findbugs/main.html
 
 links:
 
+- [documentation on GitHub pages](https://daggerok.github.io/findbugs-example)
+- [documentation on GitLab pages](https://daggerok.gitlab.io/findbugs-example)
+
+other links:
+
 - link:https://gleclaire.github.io/findbugs-maven-plugin/plugin-info.html[Maven plugin]
 - link:https://stackoverflow.com/questions/8564208/how-to-generate-a-html-report-for-findbugs-with-maven-3-x[How to generate a html report for findbugs with Maven 3.x]
 - link:http://www.sw-engineering-candies.com/blog-1/findbugstmwarningsbysample-parti[FindBugs testing]
