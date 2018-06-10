@@ -42,8 +42,8 @@ open ./build/findbugs/main.html
 
 links:
 
-- [documentation on GitHub pages](https://daggerok.github.io/findbugs-example)
-- [documentation on GitLab pages](https://daggerok.gitlab.io/findbugs-example)
+- link:https://daggerok.github.io/findbugs-example[documentation on GitHub pages]
+- link:https://daggerok.gitlab.io/findbugs-example[documentation on GitLab pages]
 
 other links:
 
