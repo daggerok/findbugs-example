@@ -30,12 +30,12 @@ ci:
 pages:
   stage: deploy
   script:
-  - wget https://services.gradle.org/distributions/gradle-4.8-bin.zip -O /tmp/gradle-4.8-bin.zip
-  - unzip -d /tmp /tmp/gradle-4.8-bin.zip
-  - export PATH="/tmp/gradle-4.8/bin:$PATH"
-  - gradle :docs:documentation
+  #- wget https://services.gradle.org/distributions/gradle-4.8-bin.zip -O /tmp/gradle-4.8-bin.zip
+  #- unzip -d /tmp /tmp/gradle-4.8-bin.zip
+  #- export PATH="/tmp/gradle-4.8/bin:$PATH"
   - ./gradlew :docs:tasks --all
-  - ./gradlew :docs:documentation
+  - ./gradlew :docs:asciidoctor
+  - ./gradlew documentation
   artifacts:
     paths:
     - public
