@@ -21,8 +21,8 @@ ifdef::backend-html5[image:https://travis-ci.org/daggerok/{root-project-name}.sv
 GitLab CI status:
 ifdef::backend-html5[image:https://gitlab.com/daggerok/{root-project-name}/badges/master/build.svg["Build Status", link={gitlab-url}]]
 
-PDF:
-ifdef::backend-html5[link:./index.pdf["Documentation in PFD format"]]
+BitBucket CI status:
+ifdef::backend-html5[image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.svg["Build Status", link={bitbucket-url}]]
 
 == Introduction
 
@@ -30,4 +30,24 @@ include::../../README.adoc[tags=content]
 
 == Implementation
 
-//TODO: iplement documentation...
+TODO: implement documentation...
+
+== Links
+
+ifdef::backend-html5[link:./index.pdf[Documentation in PFD format]]
+
+ifdef::backend-html5[link:https://github.com/daggerok/findbugs-example[GitHub]]
+
+ifdef::backend-html5[link:https://gitlab.com/daggerok/findbugs-example[GitLab]]
+
+ifdef::backend-html5[link:https://bitbucket.com/daggerok/findbugs-example[BitBucket]]
+
+---
+
+.available git repos
+----
+git remote -v
+bitbucket git@bitbucket.org:daggerok/findbugs-example.git
+github    git@github.com:daggerok/findbugs-example.git
+gitlab    git@gitlab.com:daggerok/findbugs-example.git
+----
