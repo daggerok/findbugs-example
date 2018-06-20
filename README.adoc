@@ -40,6 +40,22 @@ open ./build/findbugs/main.html
 ./mvnw findbugs:help -Ddetail=true -Dgoal=findbugs
 ----
 
+.maven spotbugs (find security bugs)
+[source,bash]
+----
+# get compiled code for analysis (it can be done one time)
+mvnw clean compile
+
+# get analysis for security issues
+mvnw spotbugs:check
+
+# sorted issues by categories in gui
+mvnw spotbugs:gui
+
+# get reports you can saw in /target/site/project-reports.html (include both for comparing)
+mvnw site
+----
+
 links:
 
 - link:https://daggerok.github.io/findbugs-example[documentation on GitHub pages]
