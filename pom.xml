@@ -5,7 +5,7 @@
 
   <groupId>com.github.daggerok</groupId>
   <artifactId>findbugs-example</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <packaging>jar</packaging>
 
   <parent>
@@ -217,6 +217,26 @@
         </executions>
       </plugin>
 
+      <!-- provide spotbugs security static analysis -->
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>3.1.3</version>
+        <configuration>
+            <effort>Max</effort>
+            <threshold>Low</threshold>
+            <includeFilterFile>${project.basedir}/spotbugs-security-include.xml</includeFilterFile>
+          <failOnError>true</failOnError>
+          <plugins>
+            <plugin>
+              <groupId>com.h3xstream.findsecbugs</groupId>
+              <artifactId>findsecbugs-plugin</artifactId>
+              <version>LATEST</version>
+            </plugin>
+          </plugins>
+        </configuration>
+      </plugin>
+
       <!-- junit -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -266,7 +286,7 @@
     </plugins>
   </build>
 
-  <!-- html report (including findbugs: target/site/findbugs.html) -->
+  <!-- html report (including findbugs and spotbugs security reports: target/site/project-reports.html) -->
   <reporting>
     <plugins>
       <plugin>
@@ -291,6 +311,23 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>3.0.5</version>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>3.1.3</version>
+        <configuration>
+          <threshold>Low</threshold>
+          <includeFilterFile>${project.basedir}/spotbugs-security-include.xml</includeFilterFile>
+          <plugins>
+            <plugin>
+              <groupId>com.h3xstream.findsecbugs</groupId>
+              <artifactId>findsecbugs-plugin</artifactId>
+              <version>LATEST</version>
+            </plugin>
+          </plugins>
+        </configuration>
       </plugin>
 
       <plugin>
