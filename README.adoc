@@ -11,7 +11,7 @@
 open ./target/site/findbugs.html
 ----
 
-gradle
+.gradle
 [source,bash]
 ----
 # ./gradlew check
